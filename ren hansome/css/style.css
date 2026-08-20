@@ -1,0 +1,1443 @@
+/* =========================================================
+   1. RESET & DASAR
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Inter, Segoe UI, Arial, sans-serif;
+    background: #050a14;
+    color: #eef4ff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================================================
+   2. CONTAINER
+========================================================= */
+
+.container {
+    width: min(1180px, 92%);
+    margin: auto;
+}
+
+
+/* =========================================================
+   3. HEADER / NAVBAR
+========================================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+
+    background: rgba(4, 8, 18, 0.88);
+    backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid #1c355d;
+}
+
+.nav-wrap {
+    min-height: 76px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    font-size: 21px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+}
+
+.brand img {
+    width: 52px;
+    height: 52px;
+
+    object-fit: contain;
+}
+
+.brand b {
+    color: #1e9cff;
+}
+
+
+/* =========================================================
+   4. NAVIGATION
+========================================================= */
+
+.nav-wrap nav {
+    display: flex;
+
+    gap: 22px;
+
+    margin-left: auto;
+}
+
+.nav-wrap nav a {
+    color: #aebbd0;
+
+    font-weight: 700;
+}
+
+.nav-wrap nav a:hover,
+.nav-wrap nav .active {
+    color: #3eb1ff;
+}
+
+
+/* =========================================================
+   5. CART / KERANJANG
+========================================================= */
+
+.cart-btn {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    background: #0d1c35;
+
+    border: 1px solid #2869aa;
+
+    padding: 9px 13px;
+
+    border-radius: 12px;
+
+    font-weight: 800;
+}
+
+.cart-btn em {
+    font-style: normal;
+
+    background: #168cff;
+    color: white;
+
+    min-width: 22px;
+    height: 22px;
+
+    border-radius: 99px;
+
+    text-align: center;
+
+    font-size: 13px;
+    line-height: 22px;
+}
+
+
+/* =========================================================
+   6. HERO
+========================================================= */
+
+.hero {
+    padding: 82px 0 70px;
+
+    background:
+        radial-gradient(
+            circle at 75% 20%,
+            #063c70 0,
+            transparent 33%
+        ),
+        linear-gradient(
+            135deg,
+            #040813,
+            #07172c
+        );
+}
+
+.hero-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 50px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 6vw, 72px);
+
+    line-height: 1.02;
+
+    max-width: 760px;
+
+    margin: 15px 0;
+}
+
+.hero h1 span {
+    color: #1e9cff;
+}
+
+.hero p {
+    max-width: 680px;
+
+    color: #b7c5d9;
+
+    font-size: 18px;
+
+    margin-bottom: 26px;
+}
+
+
+/* =========================================================
+   7. EYEBROW
+========================================================= */
+
+.eyebrow {
+    color: #42adff;
+
+    font-size: 13px;
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   8. HERO BADGE
+========================================================= */
+
+.hero-badge {
+    min-width: 210px;
+
+    padding: 30px;
+
+    border: 1px solid #276aa9;
+
+    border-radius: 22px;
+
+    background: #08182d;
+
+    box-shadow: 0 0 45px rgba(22, 133, 255, 0.16);
+
+    text-align: center;
+}
+
+.hero-badge strong {
+    display: block;
+
+    font-size: 28px;
+
+    color: #fff;
+}
+
+.hero-badge span {
+    display: block;
+
+    color: #2aa7ff;
+
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.hero-badge small {
+    color: #aebbd0;
+}
+
+
+/* =========================================================
+   9. SECTION
+========================================================= */
+
+.section {
+    padding: 70px 0;
+}
+
+.soft {
+    background: #07101e;
+
+    border-top: 1px solid #142b49;
+    border-bottom: 1px solid #142b49;
+}
+
+
+/* =========================================================
+   10. SECTION HEADER
+========================================================= */
+
+.section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    gap: 30px;
+
+    margin-bottom: 30px;
+}
+
+.section-head h1,
+.section-head h2 {
+    font-size: clamp(30px, 4vw, 44px);
+
+    line-height: 1.1;
+
+    margin-top: 6px;
+}
+
+.section-head > p {
+    max-width: 500px;
+
+    color: #9eacc0;
+}
+
+.center {
+    text-align: center;
+
+    display: block;
+}
+
+
+/* =========================================================
+   11. SERVICE / PRODUK
+========================================================= */
+
+.service-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 24px;
+}
+
+.service-card {
+    background: linear-gradient(
+        145deg,
+        #0a1425,
+        #07101d
+    );
+
+    border: 1px solid #1d3e67;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    transition: 0.25s;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #2c8ee0;
+
+    box-shadow:
+        0 18px 45px rgba(0, 132, 255, 0.12);
+}
+
+
+/* =========================================================
+   12. GAMBAR PRODUK
+========================================================= */
+
+.image-link {
+    display: block;
+
+    aspect-ratio: 3 / 2;
+
+    background: #02060d;
+
+    overflow: hidden;
+}
+
+.image-link img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: 0.35s;
+}
+
+.service-card:hover .image-link img {
+    transform: scale(1.025);
+}
+
+
+/* =========================================================
+   13. CARD CONTENT
+========================================================= */
+
+.card-content {
+    padding: 22px;
+}
+
+.card-content h3 {
+    font-size: 25px;
+
+    margin: 8px 0 5px;
+}
+
+.card-content p {
+    color: #9eacc0;
+
+    min-height: 52px;
+}
+
+
+/* =========================================================
+   14. TAG
+========================================================= */
+
+.tag {
+    display: inline-block;
+
+    padding: 5px 9px;
+
+    border-radius: 7px;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+.tag.blue {
+    background: #0a3156;
+
+    color: #43b4ff;
+}
+
+.tag.gold {
+    background: #4b3810;
+
+    color: #ffd34c;
+}
+
+.tag.purple {
+    background: #301044;
+
+    color: #d89cff;
+}
+
+
+/* =========================================================
+   15. HARGA
+========================================================= */
+
+.price-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 16px 0;
+
+    color: #a9bad0;
+}
+
+.price-line b {
+    font-size: 19px;
+
+    color: #fff;
+}
+
+.price-line span {
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   16. BUTTON
+========================================================= */
+
+.primary-btn,
+.secondary-btn,
+.danger-btn {
+    border: 0;
+
+    cursor: pointer;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    padding: 12px 17px;
+
+    font-weight: 900;
+    font-size: 15px;
+
+    transition: 0.2s;
+}
+
+
+/* =========================================================
+   17. PRIMARY BUTTON
+========================================================= */
+
+.primary-btn {
+    background: linear-gradient(
+        135deg,
+        #168cff,
+        #0757bd
+    );
+
+    color: white;
+
+    box-shadow:
+        0 8px 25px rgba(14, 123, 237, 0.22);
+}
+
+.primary-btn:hover {
+    filter: brightness(1.12);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   18. SECONDARY BUTTON
+========================================================= */
+
+.secondary-btn {
+    border: 1px solid #2b5e91;
+
+    color: #dcecff;
+
+    background: #0a1729;
+}
+
+.secondary-btn:hover {
+    border-color: #37a5ff;
+
+    color: #4db4ff;
+}
+
+
+/* =========================================================
+   19. DANGER BUTTON
+========================================================= */
+
+.danger-btn {
+    background: #32151a;
+
+    color: #ff9b9b;
+
+    border: 1px solid #6b2b32;
+}
+
+.full {
+    width: 100%;
+
+    margin-top: 12px;
+}
+
+
+/* =========================================================
+   20. CARA ORDER
+========================================================= */
+
+.steps {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.step {
+    background: #09182b;
+
+    border: 1px solid #19395e;
+
+    border-radius: 16px;
+
+    padding: 24px;
+}
+
+.step span {
+    color: #2ba7ff;
+
+    font-size: 13px;
+
+    font-weight: 900;
+}
+
+.step h3 {
+    margin: 6px 0;
+}
+
+.step p {
+    color: #9eacc0;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   21. BACK LINK
+========================================================= */
+
+.back-link {
+    display: inline-block;
+
+    color: #63b9ff;
+
+    margin-bottom: 22px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   22. DETAIL PRODUK
+========================================================= */
+
+.product-detail {
+    display: grid;
+
+    grid-template-columns: 1.15fr 0.85fr;
+
+    gap: 35px;
+
+    background: #081426;
+
+    border: 1px solid #1b416c;
+
+    border-radius: 22px;
+
+    padding: 24px;
+}
+
+
+/* =========================================================
+   23. GAMBAR DETAIL PRODUK
+========================================================= */
+
+.product-visual img {
+    width: 100%;
+
+    border-radius: 15px;
+
+    display: block;
+}
+
+
+/* =========================================================
+   24. INFO PRODUK
+========================================================= */
+
+.product-info h1 {
+    font-size: clamp(32px, 4vw, 50px);
+
+    line-height: 1.1;
+
+    margin: 8px 0;
+}
+
+.product-info > p {
+    color: #aebbd0;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   25. PILIHAN PRODUK
+========================================================= */
+
+.option-list {
+    display: grid;
+
+    gap: 10px;
+
+    margin: 15px 0;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 13px 15px;
+
+    border: 1px solid #1d3b5e;
+
+    border-radius: 12px;
+
+    background: #091a2e;
+
+    cursor: pointer;
+}
+
+.option:hover {
+    border-color: #2b9fff;
+}
+
+.option input {
+    accent-color: #1999ff;
+}
+
+.option b {
+    display: block;
+}
+
+.option small {
+    color: #92a3b9;
+}
+
+
+/* =========================================================
+   26. QUANTITY
+========================================================= */
+
+.qty-row {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 18px 0;
+}
+
+.qty {
+    display: flex;
+
+    border: 1px solid #2a4f78;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.qty button {
+    width: 38px;
+
+    background: #0d2138;
+
+    color: #fff;
+
+    border: 0;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+.qty input {
+    width: 50px;
+
+    text-align: center;
+
+    background: #071321;
+
+    color: #fff;
+
+    border: 0;
+}
+
+
+/* =========================================================
+   27. HARGA DETAIL
+========================================================= */
+
+.detail-price {
+    font-size: 29px;
+
+    font-weight: 900;
+
+    color: #42b2ff;
+
+    margin: 10px 0 20px;
+}
+
+
+/* =========================================================
+   28. TOAST
+========================================================= */
+
+.toast {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    background: #0d8f58;
+
+    color: white;
+
+    padding: 14px 18px;
+
+    border-radius: 12px;
+
+    transform: translateY(120px);
+
+    opacity: 0;
+
+    transition: 0.25s;
+
+    z-index: 100;
+}
+
+.toast.show {
+    transform: none;
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   29. CHECKOUT
+========================================================= */
+
+.checkout-layout {
+    display: grid;
+
+    grid-template-columns: 1fr 390px;
+
+    gap: 28px;
+}
+
+
+/* =========================================================
+   30. CART LIST
+========================================================= */
+
+.cart-list {
+    display: grid;
+
+    gap: 12px;
+}
+
+.cart-item {
+    display: grid;
+
+    grid-template-columns: 78px 1fr auto;
+
+    gap: 16px;
+
+    align-items: center;
+
+    padding: 14px;
+
+    background: #081426;
+
+    border: 1px solid #1b3d64;
+
+    border-radius: 15px;
+}
+
+.cart-item img {
+    width: 78px;
+    height: 58px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+}
+
+.cart-item h3 {
+    font-size: 17px;
+}
+
+.cart-item p {
+    font-size: 13px;
+
+    color: #93a4ba;
+}
+
+.cart-item strong {
+    display: block;
+
+    color: #46b2ff;
+}
+
+
+/* =========================================================
+   31. HAPUS PRODUK
+========================================================= */
+
+.remove-btn {
+    background: transparent;
+
+    color: #ff8383;
+
+    border: 0;
+
+    cursor: pointer;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   32. KERANJANG KOSONG
+========================================================= */
+
+.empty {
+    padding: 40px;
+
+    text-align: center;
+
+    border: 1px dashed #31577e;
+
+    border-radius: 15px;
+
+    color: #9cacc0;
+}
+
+
+/* =========================================================
+   33. RINGKASAN PEMBAYARAN
+========================================================= */
+
+.summary-card {
+    align-self: start;
+
+    position: sticky;
+
+    top: 95px;
+
+    background: #081426;
+
+    border: 1px solid #25517d;
+
+    border-radius: 18px;
+
+    padding: 22px;
+}
+
+.summary-card h2 {
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   34. SUMMARY ROW
+========================================================= */
+
+.summary-row,
+.summary-total {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 9px 0;
+
+    color: #9facbf;
+}
+
+.summary-total {
+    margin-top: 10px;
+
+    padding-top: 16px;
+
+    border-top: 1px solid #27435f;
+
+    color: #fff;
+}
+
+.summary-total strong {
+    font-size: 25px;
+
+    color: #4ab5ff;
+}
+
+
+/* =========================================================
+   35. PAYMENT
+========================================================= */
+
+.payment-box {
+    margin-top: 20px;
+}
+
+.payment-box h3 {
+    margin-bottom: 10px;
+}
+
+.pay-option {
+    display: flex;
+
+    gap: 10px;
+
+    padding: 12px;
+
+    border: 1px solid #1d3d61;
+
+    border-radius: 11px;
+
+    margin: 8px 0;
+
+    cursor: pointer;
+}
+
+.pay-option input {
+    accent-color: #1b9cff;
+
+    margin-top: 3px;
+}
+
+.pay-option small {
+    display: block;
+
+    color: #8e9fb5;
+}
+
+
+/* =========================================================
+   36. QRIS
+========================================================= */
+
+/* =========================================================
+   QRIS
+========================================================= */
+
+.qris-box {
+    margin-top: 15px;
+    padding: 15px;
+
+    background: #ffffff;
+    color: #111111;
+
+    border-radius: 12px;
+
+    text-align: center;
+}
+
+.qris-image {
+    display: block;
+
+    width: 300px;
+    height: 300px;
+
+    max-width: 100%;
+
+    object-fit: contain;
+
+    margin: 0 auto 12px;
+
+    border-radius: 8px;
+}
+
+.qris-box small {
+    display: block;
+
+    color: #555;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+.hidden {
+    display: none;
+}
+
+/* =========================================================
+   37. FORM / TEXTAREA
+========================================================= */
+
+.field-label {
+    display: block;
+
+    font-weight: 800;
+
+    margin-top: 18px;
+
+    margin-bottom: 7px;
+}
+
+textarea {
+    width: 100%;
+
+    resize: vertical;
+
+    padding: 12px;
+
+    background: #06101d;
+
+    border: 1px solid #294766;
+
+    border-radius: 10px;
+
+    color: #fff;
+
+    font: inherit;
+}
+
+
+/* =========================================================
+   38. FOOTER
+========================================================= */
+
+footer {
+    border-top: 1px solid #172e4b;
+
+    background: #030811;
+
+    padding: 25px 0;
+
+    color: #8e9fb5;
+}
+
+.footer-wrap {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.footer-wrap div:first-child span {
+    display: block;
+
+    font-size: 12px;
+}
+
+.footer-wrap a {
+    color: #36abff;
+}
+
+
+/* =========================================================
+   39. RESPONSIVE TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .nav-wrap nav {
+        display: none;
+    }
+
+    .hero-inner {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .hero-badge {
+        width: 100%;
+    }
+
+    .service-grid,
+    .product-detail,
+    .checkout-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .summary-card {
+        position: static;
+    }
+}
+
+
+/* =========================================================
+   40. RESPONSIVE HP
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .nav-wrap {
+        gap: 8px;
+    }
+
+    .brand span {
+        display: none;
+    }
+
+    .cart-btn span {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 55px;
+    }
+
+    .section {
+        padding: 50px 0;
+    }
+
+    .service-grid,
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .section-head {
+        display: block;
+    }
+
+    .section-head > p {
+        margin-top: 10px;
+    }
+
+    .product-detail {
+        padding: 14px;
+    }
+
+    .cart-item {
+        grid-template-columns: 58px 1fr;
+    }
+
+    .cart-item img {
+        width: 58px;
+        height: 48px;
+    }
+
+    .remove-btn {
+        grid-column: 2;
+
+        text-align: left;
+    }
+
+    .footer-wrap {
+        display: block;
+    }
+
+    .footer-wrap div + div {
+        margin-top: 8px;
+    }
+
+    .price-line {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 4px;
+    }
+}
+/* ===================== TESTIMONI ===================== */
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.testi-card {
+  background: #09182b;
+  border: 1px solid #1a3a5e;
+  border-radius: 16px;
+  padding: 22px;
+  transition: 0.25s;
+}
+
+.testi-card:hover {
+  border-color: #2b9fff;
+  transform: translateY(-4px);
+}
+
+.testi-card .stars {
+  color: #ffc107;
+  font-size: 18px;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+
+.testi-card p {
+  color: #b7c5d9;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  min-height: 70px;
+}
+
+.testi-user strong {
+  display: block;
+  color: #fff;
+  font-size: 15px;
+}
+
+.testi-user span {
+  font-size: 12px;
+  color: #7a8fa8;
+}
+
+@media (max-width: 900px) {
+  .testi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .testi-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===================== CHATBOT ===================== */
+.chatbot-toggle {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #168cff, #0757bd);
+  color: #fff;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 28px rgba(14, 123, 237, 0.45);
+  z-index: 999;
+  transition: 0.2s;
+  user-select: none;
+}
+
+.chatbot-toggle:hover {
+  transform: scale(1.08);
+}
+
+.chatbot-box {
+  position: fixed;
+  right: 22px;
+  bottom: 90px;
+  width: 340px;
+  max-width: calc(100vw - 30px);
+  height: 480px;
+  background: #0a1628;
+  border: 1px solid #1e4a7a;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.chatbot-box.hidden {
+  display: none;
+}
+
+.chatbot-header {
+  background: linear-gradient(135deg, #0d2a4a, #0a1c35);
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #1e4a7a;
+}
+
+.chatbot-header strong {
+  display: block;
+  font-size: 15px;
+}
+
+.chatbot-header small {
+  color: #3ddc84;
+  font-size: 12px;
+}
+
+.chatbot-header button {
+  background: transparent;
+  border: 0;
+  color: #9eb4cc;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.chatbot-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bot-msg, .user-msg {
+  max-width: 85%;
+  padding: 10px 13px;
+  border-radius: 14px;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.bot-msg {
+  background: #12243c;
+  color: #dce8f5;
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+
+.user-msg {
+  background: linear-gradient(135deg, #168cff, #0a6ad4);
+  color: #fff;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+.chatbot-quick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px 12px;
+  border-top: 1px solid #1a3555;
+}
+
+.chatbot-quick button {
+  background: #0d2138;
+  border: 1px solid #2a5a8a;
+  color: #9fd0ff;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.chatbot-quick button:hover {
+  border-color: #3eb1ff;
+  color: #fff;
+}
+
+.chatbot-input {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid #1a3555;
+  background: #081422;
+}
+
+.chatbot-input input {
+  flex: 1;
+  background: #0d1c30;
+  border: 1px solid #2a4f78;
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: #fff;
+  font: inherit;
+  outline: none;
+}
+
+.chatbot-input button {
+  background: #168cff;
+  border: 0;
+  color: #fff;
+  font-weight: 800;
+  padding: 0 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}

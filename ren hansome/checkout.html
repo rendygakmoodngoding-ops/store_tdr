@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Transaksi - TDR Store</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="site-header">
+
+        <div class="container nav-wrap">
+
+            <!-- LOGO -->
+            <a class="brand" href="index.html">
+
+                <img
+                    src="assets/logo.png"
+                    alt="TDR Store"
+                >
+
+                <span>
+                    TDR <b>STORE</b>
+                </span>
+
+            </a>
+
+
+            <!-- NAVIGATION -->
+            <nav>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="product.html?id=joki">
+                    Produk
+                </a>
+
+                <a
+                    class="active"
+                    href="checkout.html"
+                >
+                    Transaksi
+                </a>
+
+            </nav>
+
+
+            <!-- CART -->
+            <a
+                class="cart-btn"
+                href="checkout.html"
+            >
+
+                🛍️
+
+                <span>
+                    Keranjang
+                </span>
+
+                <em id="cartCount">
+                    0
+                </em>
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="section">
+
+        <div class="container checkout-layout">
+
+
+            <!-- =================================================
+                 DAFTAR PESANAN
+            ================================================== -->
+
+            <section>
+
+                <a
+                    class="back-link"
+                    href="index.html"
+                >
+                    ← Kembali belanja
+                </a>
+
+
+                <div class="section-head">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            CHECKOUT
+                        </span>
+
+                        <h1>
+                            Transaksi Kamu
+                        </h1>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUK DI KERANJANG -->
+                <div
+                    id="cartItems"
+                    class="cart-list"
+                ></div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 RINGKASAN PEMBAYARAN
+            ================================================== -->
+
+            <aside class="summary-card">
+
+                <h2>
+                    Ringkasan Pembayaran
+                </h2>
+
+
+                <!-- SUBTOTAL -->
+                <div class="summary-row">
+
+                    <span>
+                        Subtotal
+                    </span>
+
+                    <b id="subtotal">
+                        Rp0
+                    </b>
+
+                </div>
+
+
+                <!-- BIAYA LAYANAN -->
+                <div class="summary-row">
+
+                    <span>
+                        Biaya layanan
+                    </span>
+
+                    <b id="fee">
+                        Rp0
+                    </b>
+
+                </div>
+
+
+                <!-- TOTAL -->
+                <div class="summary-total">
+
+                    <span>
+                        Total Bayar
+                    </span>
+
+                    <strong id="grandTotal">
+                        Rp0
+                    </strong>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     METODE PEMBAYARAN
+                ================================================== -->
+
+                <div class="payment-box">
+
+                    <h3>
+                        Metode Pembayaran
+                    </h3>
+
+
+                    <!-- CASH -->
+                    <label class="pay-option">
+
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="cash"
+                            checked
+                        >
+
+                        <span>
+
+                            <b>
+                                Cash
+                            </b>
+
+                            <small>
+                                Bayar langsung / sesuai kesepakatan
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                    <!-- QRIS -->
+                    <label class="pay-option">
+
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="qris"
+                        >
+
+                        <span>
+
+                            <b>
+                                QRIS
+                            </b>
+
+                            <small>
+                                Scan QRIS saat pembayaran
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+
+                    <!-- =================================================
+                         QRIS
+                    ================================================== -->
+
+                    <div
+                        id="qrisBox"
+                        class="qris-box hidden"
+                    >
+
+                        <img
+                            src="assets/qris.jpeg"
+                            alt="QRIS TDR Store"
+                            class="qris-image"
+                        >
+
+                        <small>
+                            Scan QRIS di atas untuk melakukan pembayaran.
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     CATATAN PESANAN
+                ================================================== -->
+
+                <label
+                    class="field-label"
+                    for="note"
+                >
+                    Catatan / Data Pesanan
+                </label>
+
+
+                <textarea
+                    id="note"
+                    rows="5"
+                    placeholder="Contoh:
+ID MLBB,
+ID Free Fire,
+nomor tujuan pulsa,
+detail desain,
+atau catatan lainnya..."
+                ></textarea>
+
+
+
+                <!-- =================================================
+                     TOMBOL BAYAR
+                ================================================== -->
+
+                <button
+                    id="payBtn"
+                    class="primary-btn full"
+                    type="button"
+                >
+                    Bayar & Konfirmasi WhatsApp
+                </button>
+
+
+
+                <!-- =================================================
+                     TOMBOL KOSONGKAN
+                ================================================== -->
+
+                <button
+                    id="clearCart"
+                    class="danger-btn full"
+                    type="button"
+                >
+                    Kosongkan Keranjang
+                </button>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <div class="container footer-wrap">
+
+            <div>
+
+                <b>
+                    TDR STORE
+                </b>
+
+                <span>
+                    Jasa & Produk Digital
+                </span>
+
+            </div>
+
+
+            <div>
+
+                WhatsApp:
+
+                <a
+                    href="https://wa.me/6285933800533"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    0859-3380-0533
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="js/app.js"></script>
+
+    <!-- ===================== CHATBOT ===================== -->
+    <div id="chatbot-toggle" class="chatbot-toggle" title="Chat dengan kami">
+      💬
+    </div>
+
+    <div id="chatbot-box" class="chatbot-box hidden">
+      <div class="chatbot-header">
+        <div>
+          <strong>TDR Store Assistant</strong>
+          <small>● Online</small>
+        </div>
+        <button id="chatbot-close" type="button">✕</button>
+      </div>
+
+      <div id="chatbot-messages" class="chatbot-messages">
+        <div class="bot-msg">
+          Halo! 👋 Selamat datang di <b>TDR Store</b>.<br>
+          Ada yang bisa kami bantu?
+        </div>
+      </div>
+
+      <div class="chatbot-quick">
+        <button type="button" data-q="harga">💰 Cek Harga</button>
+        <button type="button" data-q="cara">📋 Cara Order</button>
+        <button type="button" data-q="joki">🎮 Joki ML</button>
+        <button type="button" data-q="wa">💬 Chat Admin</button>
+      </div>
+
+      <div class="chatbot-input">
+        <input id="chatbot-input" type="text" placeholder="Ketik pesan..." autocomplete="off">
+        <button id="chatbot-send" type="button">Kirim</button>
+      </div>
+    </div>
+</body>
+</html>

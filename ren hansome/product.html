@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Produk - TDR Store</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html"><img src="assets/logo.png" alt="TDR Store"><span>TDR <b>STORE</b></span></a>
+    <nav><a href="index.html">Home</a><a class="active" href="product.html?id=joki">Produk</a></nav>
+    <a class="cart-btn" href="checkout.html">🛍️ <span>Keranjang</span><em id="cartCount">0</em></a>
+  </div>
+</header>
+
+<main class="section">
+  <div class="container">
+    <a class="back-link" href="index.html">← Kembali ke layanan</a>
+    <div id="productDetail" class="product-detail"></div>
+  </div>
+</main>
+
+<div id="toast" class="toast">Produk ditambahkan ke keranjang.</div>
+<script src="js/app.js"></script>
+    <!-- ===================== CHATBOT ===================== -->
+    <div id="chatbot-toggle" class="chatbot-toggle" title="Chat dengan kami">
+      💬
+    </div>
+
+    <div id="chatbot-box" class="chatbot-box hidden">
+      <div class="chatbot-header">
+        <div>
+          <strong>TDR Store Assistant</strong>
+          <small>● Online</small>
+        </div>
+        <button id="chatbot-close" type="button">✕</button>
+      </div>
+
+      <div id="chatbot-messages" class="chatbot-messages">
+        <div class="bot-msg">
+          Halo! 👋 Selamat datang di <b>TDR Store</b>.<br>
+          Ada yang bisa kami bantu?
+        </div>
+      </div>
+
+      <div class="chatbot-quick">
+        <button type="button" data-q="harga">💰 Cek Harga</button>
+        <button type="button" data-q="cara">📋 Cara Order</button>
+        <button type="button" data-q="joki">🎮 Joki ML</button>
+        <button type="button" data-q="wa">💬 Chat Admin</button>
+      </div>
+
+      <div class="chatbot-input">
+        <input id="chatbot-input" type="text" placeholder="Ketik pesan..." autocomplete="off">
+        <button id="chatbot-send" type="button">Kirim</button>
+      </div>
+    </div>
+</body>
+</html>
